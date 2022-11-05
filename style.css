@@ -1,0 +1,63 @@
+
+.calck
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    margin: 0 auto;
+}
+input
+{
+    box-sizing: border-box;
+    width: 52px;
+    height: 42px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ebf7ff;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.num
+{
+    width: 50px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ebf7ff;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+#res
+{
+
+    
+    width: 215px;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 24px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border: 1px solid black;
+    color: rgb(0, 0, 0);
+    background-color: #d1d1d169;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.row
+{
+    display: flex;
+    gap: 10px;
+}
+
+
+
