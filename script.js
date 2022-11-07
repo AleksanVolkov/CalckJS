@@ -1,15 +1,79 @@
 'use strict'
 
+       let sunRes=0;
+       let sunResSum;
+    
+      
+      let num =[];
+      
+      const result = document.querySelector('#res'),
+            plus = document.querySelector('#plus'),
+            sum = document.querySelector('#sum');
 
-      let usdI,bynI;
+
+      function plusN(){
+            let rest = +num.join('')
+            result.textContent = '';
+            num=[];
+            
+            plusB(rest)
+            
+      }
+      function plusB(rest){
+                  
+            if(sunRes===0){
+                  sunRes = +rest ;
+                 
+                  console.log(sunRes)
+            }else{
+                  sunResSum = sunRes + rest ;
+                  console.log(sunResSum)
+
+                  sum.addEventListener('click',()=>{
+       
+                        sumAll();
+                     })
+                  
+            }
+                 
+                
+                
+                 
+                  
+            
+
+      } 
+
+      function sumAll(){
+
+            const sumAll = sunResSum;
+            console.log(sumAll)
+            
+      } 
+
+     
 
 
+          
+
+      plus.addEventListener('click',()=>{
+            plusN();
+      })
+
+     function push(){
+          let res = num.join('')
+
+          
+           result.textContent = res;
+          
+     }
       function getDynamicInfo(selector){
             const input = document.querySelector(selector);
-            console.log(input)
+            
             input.addEventListener('click', ()=>{
-                  const result = document.querySelector('#res');
-                  result.textContent= input.value;
+                  
+                  num.push(input.value);
+                  push()
 
             })
             
