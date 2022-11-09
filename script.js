@@ -1,111 +1,82 @@
 'use strict'
 
-       let sunRes=0;
-       let sunResSum;
-    
-      
-      let num =[];
+      let sunResP=0;
+      let sunResSumP=0;
+      let sunResM=0;
+      let sunResSumM=0;
+      let num =[''];
       
       const result = document.querySelector('#res'),
             plus = document.querySelector('#plus'),
-            sum = document.querySelector('#sum');
-
+            sum = document.querySelector('#sum'),
+            multiply =  document.querySelector('#multiply'),
+            clear = document.querySelector('#ce');
 
       function plusN(){
             let rest = +num.join('')
-            result.textContent = '';
+            result.textContent = '+';
             num=[];
-            
             plusB(rest)
+      }
+
+      function plusB(rest){
+            sunResP===0?sunResP = rest:sunResSumP = sunResP + rest;
+            console.log(sunResSumP)
+            console.log(sunResP)
+      } 
+
+
+      function multiplyN(){
+            let rest = +num.join('')
+            result.textContent = '*';
+            num=[];
+            multiplyB(rest)
+      }
+
+      function multiplyB(rest){
+            sunResM===0?sunResM = rest:sunResSumM = sunResM * rest;
+           
+      } 
+      
+
+      sum.addEventListener('click',()=>{
+            sunResP==0?(multiplyN(), sumAllM()):(plusN(),sumAllP());
+          
+            
+           
+      
+         })
+
+      multiply.addEventListener('click',()=>{
+            
+            multiplyN()
+            
+         })
+      function sumAllP(){
+            result.textContent = sunResSumP;
+            
+      } 
+      function sumAllM(){
+            result.textContent = sunResSumM;
             
       }
-      function plusB(rest){
-                  
-            if(sunRes===0){
-                  sunRes = +rest ;
-                 
-                  console.log(sunRes)
-            }else{
-                  sunResSum = sunRes + rest ;
-                  console.log(sunResSum)
-
-                  sum.addEventListener('click',()=>{
-       
-                        sumAll();
-                     })
-                  
-            }
-                 
-                
-                
-                 
-                  
-            
-
-      } 
-
-      function sumAll(){
-
-            const sumAll = sunResSum;
-            console.log(sumAll)
-            
-      } 
-
-     
-
-
-          
 
       plus.addEventListener('click',()=>{
+            
             plusN();
       })
 
-     function push(){
+      function push(){
           let res = num.join('')
+          result.textContent = res;
+      }
 
-          
-           result.textContent = res;
-          
-     }
       function getDynamicInfo(selector){
             const input = document.querySelector(selector);
-            
             input.addEventListener('click', ()=>{
-                  
                   num.push(input.value);
                   push()
-
             })
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            // input.addEventListener('input',()=>{
-            //       switch(input.getAttribute('id')){
-            //             case'usd':
-            //             usdI=+input.value;
-            //             break;
-            //             case'byn':
-            //             bynI=+input.value;
-            //             break;
-                      
-            //       }
-            //       calck(usdI,bynI);
-                  
-            // })
-
-           
       }
 
       getDynamicInfo('#btn_1');
@@ -119,23 +90,16 @@
       getDynamicInfo('#btn_9');
       getDynamicInfo('#btn_0');
     
-
-
-      function calck(one,two){
-
-           
-            let res =+ one + two;
-            const result = document.querySelector('#res');
-            res?result.textContent=res:result.textContent=one;
-            
-
-            console.log(res)
-            
-            
-
+      function clearField (){
+            clear.addEventListener('click',()=>{
+                  result.textContent = 0;
+                  sunResP=0;
+                  sunResM=0;
+                  num=[]
+            })
       }
 
-
+      clearField ()
  
   
 

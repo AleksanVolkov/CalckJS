@@ -21,6 +21,7 @@ input
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    cursor: pointer;
 }
 .num
 {
@@ -35,6 +36,7 @@ input
     align-items: center;
     justify-content: center;
     text-transform: uppercase;
+    cursor: pointer;
 }
 #res
 {
